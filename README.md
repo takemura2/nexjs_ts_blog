@@ -8,7 +8,7 @@ docker compose up -d
 
 ### nodeコンテナに入る
 ```
-docker exec -it nextjs-sample1 zsh
+docker exec -it nextjs_ts_blog zsh
 ```
 ### 必要モジュールのインストール(初回のみ)
 ```
