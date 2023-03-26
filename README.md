@@ -12,7 +12,7 @@ docker exec -it nextjs_ts_blog zsh
 ```
 ### 必要モジュールのインストール(初回のみ)
 ```
-npm init
+npm in
 ```
 
 ### 起動
