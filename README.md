@@ -1,4 +1,4 @@
-# dockerでのnextjs開発環境構築
+# dockerでのnextjs開発環境構築(typescriptでのblogサンプル)
 
 ### nodeコンテナの起動
 ```
