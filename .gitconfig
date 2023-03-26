@@ -1,0 +1,9 @@
+[init]
+	defaultBranch = main
+[safe]
+	directory = /root
+[user]
+	email = takemura2@gmail.com
+	name = takemura
+[credential]
+	helper = "!f() { /root/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/node /tmp/vscode-remote-containers-e07c2f7d-49b3-4d4c-a448-05dcc9babe9f.js git-credential-helper $*; }; f"

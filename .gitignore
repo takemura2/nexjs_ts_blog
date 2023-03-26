@@ -1,0 +1,7 @@
+.config/
+.local/
+.npm/
+.ssh/
+.cache/
+.vscode-server/
+
