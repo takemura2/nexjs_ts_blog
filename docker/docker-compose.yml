@@ -1,10 +1,10 @@
 version: '3.8'
-name: 'nextjs-sample1'
+name: 'nextjs_ts_blog'
 services:
-  sample1:
-    container_name: nextjs-sample1
-    hostname: sample1
-    build: .
+  node:
+    container_name: nextjs_ts_blog
+    hostname: ts_blog
+    build: . 
     image: nodejs:18.14.2-r0
     volumes:
     - ../:/root

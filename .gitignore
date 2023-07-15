@@ -4,4 +4,6 @@
 .ssh/
 .cache/
 .vscode-server/
+.dotnet/
+mongo/
 
