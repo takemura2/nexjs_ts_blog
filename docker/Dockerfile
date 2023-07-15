@@ -1,4 +1,4 @@
-From alpine:3.17.2
+FROM  alpine:3.17.2
 RUN apk update && \
 apk add --no-cache zsh tmux openssh neovim git
 RUN sed -i 's/ash/zsh/' /etc/passwd
