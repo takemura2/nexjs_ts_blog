@@ -1,0 +1,28 @@
+# ベースイメージを指定
+FROM alpine:3.20
+
+# myuserというユーザーとそのホームディレクトリを作成
+RUN adduser -D -h /home/myuser myuser
+
+# 必要なパッケージをインストール（例: sudo）
+RUN apk update && \
+apk add --no-cache sudo bash neovim git
+
+# RUN apk add nodejs-18.20.1-r0 npm-9.6.6-r0
+
+# myuserにsudo権限を付与（オプション）
+RUN echo "myuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+# /etc/passwdを直接編集してmyuserのデフォルトシェルをbashに変更
+RUN sed -i 's/\/home\/myuser:\/bin\/ash/\/home\/myuser:\/bin\/bash/' /etc/passwd
+
+# デフォルトのユーザーをmyuserに変更
+USER myuser
+
+# デフォルトで使用するディレクトリ
+WORKDIR /home/myuser
+
+
+# CMDの指定（コンテナ起動時に実行されるコマンド）
+CMD ["/bin/bash"]
+

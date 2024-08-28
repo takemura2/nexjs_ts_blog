@@ -1,0 +1,20 @@
+version: '3.8'
+name: 'nodejs_base'
+services:
+  web:
+    container_name: nodejs_base
+    hostname: web
+    build:
+      context: .
+      args:
+        UID: "${UID}"
+        GID: "${GID}"
+      dockerfile: dockerNodeDockerfile 
+    volumes:
+     - .:/home/myuser        # カレントディレクトリをコンテナの作業ディレクトリにマウント
+    ports:
+      - 3000:3000
+    stdin_open: true  # コンテナの標準入力を開いたままにする
+    tty: true # TTYモードを有効にする（VS Codeがコンテナにアタッチするのに必要）
+    environment:
+      - NODE_ENV=development

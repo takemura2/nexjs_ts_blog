@@ -1,0 +1,23 @@
+# ベースイメージを指定
+FROM node:22
+
+
+# ホストと同じUID、GIDでユーザーを作成
+ARG UID
+ARG GID
+RUN groupadd -g $GID mygroup
+
+# myuserという名前の非rootユーザーを作成し、そのホームディレクトリを指定
+RUN useradd -m -u $UID -g $GID -s /bin/bash myuser
+
+
+# ユーザーを myuser に切り替える
+USER myuser
+
+# デフォルトで使用するディレクトリ
+WORKDIR /home/myuser
+
+
+# CMDの指定（コンテナ起動時に実行されるコマンド）
+CMD ["/bin/bash"]
+

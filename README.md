@@ -2,16 +2,16 @@
 
 ### nodeコンテナの起動
 ```
-cd docker
 docker compose up -d
 ```
 
 ### nodeコンテナに入る
 ```
-docker exec -it nextjs_ts_blog zsh
+docker exec -it nextjs_ts_blog bash
 ```
 ### 必要モジュールのインストール(初回のみ)
 ```
+cd app
 npm install
 ```
 
@@ -22,7 +22,6 @@ npm install
 http://localhost:3000
 
 ### コンテナの削除
-dockerディレクトリに移動し
 ```
 docker compose down
 ```
